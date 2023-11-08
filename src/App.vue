@@ -10,6 +10,16 @@ const isVisible = ref(false);
 const send = () => {
   isVisible.value = true;
 };
+
+const copy = () => {
+  const htmlContent = document.getElementById("htmlContent");
+  const range = document.createRange();
+  range.selectNode(htmlContent);
+  window.getSelection().removeAllRanges();
+  window.getSelection().addRange(range);
+  document.execCommand("copy");
+  window.getSelection().removeAllRanges();
+};
 </script>
 
 <template>
@@ -104,7 +114,7 @@ const send = () => {
           <h5 class="mb-2 text-3xl font-bold text-gray-900 dark:text-white">
             Resultado
           </h5>
-          <div style="">
+          <div style="" id="htmlContent">
             <p>📢{{ name }}</p>
 
             <p>➡ De:</p>
@@ -113,8 +123,15 @@ const send = () => {
             <p>🚚 {{ freight }}</p>
 
             <p style="word-wrap: break-word">🛒 Compre com o link 👇🏾</p>
-            <p style="word-wrap: break-word; height: 20px">{{ link }}</p>
+            <p style="word-wrap: break-word">{{ link }}</p>
           </div>
+          <button
+            type="button"
+            @click="copy"
+            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mt-5"
+          >
+            Copiar
+          </button>
         </div>
       </div>
     </div>
