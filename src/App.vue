@@ -21,10 +21,10 @@ const send = () => {
       class="w-10/12 p-4 text-center bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700"
     >
       <h5 class="mb-2 text-3xl font-bold text-gray-900 dark:text-white">
-        Gerador de links
+        Gerador de postes
       </h5>
       <p class="mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">
-        Gere aqui seu links para seus anúncios
+        Gere aqui seu postes para seus anúncios
       </p>
       <div
         class="items-center justify-center space-y-4 my-2 sm:flex sm:space-y-0 sm:space-x-4"
