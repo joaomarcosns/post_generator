@@ -49,6 +49,7 @@ const send = () => {
                 <input
                   v-model="link"
                   type="text"
+                  max="200"
                   name="floating_last_name"
                   id="Link"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -76,7 +77,7 @@ const send = () => {
                   name="floating_first_name"
                   id="name"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="Descrição"
+                  placeholder="Preço"
                   required
                 ></textarea>
               </div>
@@ -91,9 +92,11 @@ const send = () => {
           </form>
         </div>
       </div>
+
       <div
         v-if="isVisible"
         class="items-center justify-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4"
+        style="overflow: auto; padding: 1rem"
       >
         <div
           class="w-10/12 p-4 text-center bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700"
@@ -101,17 +104,16 @@ const send = () => {
           <h5 class="mb-2 text-3xl font-bold text-gray-900 dark:text-white">
             Resultado
           </h5>
-          <div>
+          <div style="">
             <p>📢{{ name }}</p>
 
-            <p>➡De:</p>
-            <p>{{ description }}</p>
+            <p>➡ De:</p>
+            <p style="word-wrap: break-word">{{ description }}</p>
 
             <p>🚚 {{ freight }}</p>
 
-            <p>🛒 Compre com o link 👇🏾</p>
-
-            <p>{{ link }}</p>
+            <p style="word-wrap: break-word">🛒 Compre com o link 👇🏾</p>
+            <p style="word-wrap: break-word; height: 20px">{{ link }}</p>
           </div>
         </div>
       </div>
